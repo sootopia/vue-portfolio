@@ -1,0 +1,56 @@
+// 말줄임표 처리 믹스인
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+// 배경이미지 설정 믹스인
+@mixin background($url, $x, $y, $width, $height, $repeat: "no-repeat") {
+    background-image: url($url);
+    background-position: ($x) ($y);
+    background-size: $width $height;
+    background-repeat: $repeat;
+}
+
+// Flex 설정 믹스인
+$flex-map: (
+    inline: inline-flex,
+    flex: flex,
+    start: flex-start,
+    end: flex-end,
+    between: space-between,
+    around: space-around,
+    stretch: stretch,
+    center: center
+);
+
+@function get_flex_value($key) {
+    @return map-get($flex-map, $key);
+}
+
+@mixin flexbox($type, $x, $y) {
+    display: get_flex_value($type);
+    align-items: get_flex_value($y);
+    justify-content: get_flex_value($x);
+}
+
+// 그라데이션 딤드 믹스인
+@mixin gradient-dimmed($height, $startColor, $endColor) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: $height;
+    background-image: linear-gradient(0deg, $startColor, $endColor);
+    z-index: 10;
+}
