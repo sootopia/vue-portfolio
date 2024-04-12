@@ -1,22 +1,23 @@
 <template>
   <Header />
   <main>
-    <HeroSection />
-    <AboutSection />
+    <HeroSection @scrollToAbout="scrollToAbout" />
+    <AboutSection ref="aboutRefEl" />
+    <SkillSection />
   </main>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import Header from '@/components/layouts/HeaderLayout.vue';
 import HeroSection from '@/components/sections/HeroSection.vue';
 import AboutSection from '@/components/sections/AboutSection.vue';
+import SkillSection from '@/components/sections/SkillSection.vue';
 
-export default {
-  components: {
-    Header,
-    HeroSection,
-    AboutSection,
-  },
+const aboutRefEl = ref(null);
+
+const scrollToAbout = () => {
+  aboutRefEl.value?.scrollToSection();
 };
 </script>
 

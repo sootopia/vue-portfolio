@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <h1 class="text-center hero__heading" v-html="typingText"></h1>
 
-      <span class="mouse">
+      <span class="mouse" @click="handleMoveScroll">
         <div class="mouse__wheel"></div>
       </span>
 
@@ -18,6 +18,7 @@ import heroMimoticon from '@/assets/images/hero_mimoticon.png';
 // const greeting = `Hello. I'm Soohyun Park. \nI'm a 9 year front-end developer.`;
 const greeting = `안녕하세요. \n9년차 프론트엔드 개발자 박수현입니다 😎`;
 const typingText = ref('');
+const emit = defineEmits(['scrollToAbout']);
 let index = 0;
 
 const typeText = () => {
@@ -32,6 +33,10 @@ const typeText = () => {
       typeText();
     }, 2000);
   }
+};
+
+const handleMoveScroll = () => {
+  emit('scrollToAbout');
 };
 
 typeText();

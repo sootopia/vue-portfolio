@@ -1,5 +1,5 @@
 <template>
-  <section class="about flex justify-center items-center">
+  <section ref="container" class="about flex justify-center items-center">
     <div class="container mx-auto">
       <div class="flex gap-48">
         <div class="flex-none">
@@ -38,58 +38,74 @@
   </section>
 </template>
 
-<script setup>
+<script>
 import SectionHeader from '@/components/SectionHeader.vue';
 import aboutMimoticon from '@/assets/images/about_mimoticon.png';
 import AboutCard from '@/components/AboutCard.vue';
 
-const cardItems = [
-  {
-    title: '경력',
-    content: '9년 5개월',
-    detail: '',
+export default {
+  components: {
+    SectionHeader,
+    AboutCard,
   },
-  {
-    title: '강점',
-    content: '성실함과 책임감',
-    detail: '',
+  data() {
+    return {
+      aboutMimoticon: aboutMimoticon,
+      cardItems: [
+        {
+          title: '경력',
+          content: '9년 5개월',
+          detail: '',
+        },
+        {
+          title: '강점',
+          content: '성실함과 책임감',
+          detail: '',
+        },
+        {
+          title: '취미',
+          content: '영화보기&운동',
+          detail: '',
+        },
+        {
+          title: '나이',
+          content: '만 31세',
+          detail: '',
+        },
+        {
+          title: '관심사',
+          content: 'UI/UX구현 및 개선',
+          detail: '',
+        },
+        {
+          title: '작업 프로젝트 수',
+          content: '100+ ⬆',
+          detail: '',
+        },
+        {
+          title: '좋아하는 것',
+          content: '명확함, 협동',
+          detail: '',
+        },
+        {
+          title: '싫어하는 것',
+          content: '모호함, 지지부진함',
+          detail: '',
+        },
+        {
+          title: '특별한 경험',
+          content: '창업 1회',
+          detail: '',
+        },
+      ],
+    };
   },
-  {
-    title: '취미',
-    content: '영화보기&운동',
-    detail: '',
+  methods: {
+    scrollToSection() {
+      this.$refs.container.scrollIntoView({ behavior: 'smooth' });
+    },
   },
-  {
-    title: '나이',
-    content: '만 31세',
-    detail: '',
-  },
-  {
-    title: '관심사',
-    content: 'UI/UX구현 및 개선',
-    detail: '',
-  },
-  {
-    title: '작업 프로젝트 수',
-    content: '100+ ⬆',
-    detail: '',
-  },
-  {
-    title: '좋아하는 것',
-    content: '명확함, 협동',
-    detail: '',
-  },
-  {
-    title: '싫어하는 것',
-    content: '모호함, 지지부진함',
-    detail: '',
-  },
-  {
-    title: '특별한 경험',
-    content: '창업 1회',
-    detail: '',
-  },
-];
+};
 </script>
 
 <style lang="scss" scoped>
