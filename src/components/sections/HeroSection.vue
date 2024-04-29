@@ -67,7 +67,7 @@ typeText();
 
   .mouse {
     position: absolute;
-    bottom: 450px;
+    bottom: 34dvh;
     left: 50%;
     width: 24px;
     height: 36px;
@@ -75,7 +75,7 @@ typeText();
     border-radius: 12px;
     transform: translateX(-50%);
     cursor: pointer;
-    z-index: 5;
+    z-index: 10;
 
     &__wheel {
       position: absolute;
@@ -94,6 +94,7 @@ typeText();
     position: absolute;
     bottom: 0;
     left: 50%;
+    max-height: 38vh;
     transform: translateX(-50%);
     animation: fadeIn 1s linear;
     z-index: 5;
