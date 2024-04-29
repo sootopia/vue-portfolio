@@ -6,8 +6,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+const props = defineProps({
+  animate: String,
+  dark: String,
+});
 const additionalClasses = ref([]);
-const props = defineProps(['animate']);
 const scrollElem = ref(null);
 
 /**
@@ -33,6 +36,10 @@ if (props.animate !== undefined) {
     observer.observe(scrollElem.value);
   });
 }
+
+if (props.dark !== undefined) {
+  handleAddClass('dark');
+}
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +62,10 @@ h2 {
 
   &.animated span {
     transform: translateY(0);
+  }
+
+  &.dark {
+    color: #101010;
   }
 }
 </style>
