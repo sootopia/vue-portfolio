@@ -54,3 +54,19 @@ $flex-map: (
     background-image: linear-gradient(0deg, $startColor, $endColor);
     z-index: 10;
 }
+
+// 카드 믹스인
+@mixin card(
+    $padding-x: 16px,
+    $padding-y: 20px,
+    $border-color: transparent,
+    $border-radius: 12px,
+    $background-color: #ffffff,
+    $box-shadow: none
+) {
+    padding: $padding-y $padding-x;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: $background-color;
+    box-shadow: $box-shadow;
+}
