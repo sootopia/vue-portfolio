@@ -220,12 +220,12 @@ export default {
     .stack__list {
       span {
         @include flexbox(inline, center, center);
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
         color: $white;
-        margin-right: 8px;
-        padding: 0 12px;
-        height: 32px;
+        margin-right: 6px;
+        padding: 0 8px;
+        height: 28px;
         border-radius: 8px;
         background-color: #20c997;
 
