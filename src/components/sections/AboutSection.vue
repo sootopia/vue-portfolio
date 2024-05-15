@@ -1,5 +1,5 @@
 <template>
-  <section ref="container" class="about flex justify-center items-center">
+  <section class="about flex justify-center items-center">
     <div class="container mx-auto">
       <div class="flex gap-48">
         <div class="flex-none">
@@ -99,11 +99,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    scrollToSection() {
-      this.$refs.container.scrollIntoView({ behavior: 'smooth' });
-    },
   },
 };
 </script>
