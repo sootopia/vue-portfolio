@@ -1,11 +1,14 @@
 <template>
   <section ref="skillSectionRef" class="skills relative flex justify-center items-center h-dvh">
-    <SectionHeader class="px-6 text-center" dark
-      >제가 경험해본, 그리고 할 줄 아는 것들이에요. <br />
-      <p class="text-sm text-slate-400 font-semibold mt-2">
-        별 개수는 숙련도를 의미해요!
-      </p></SectionHeader
-    >
+    <div ref="headerRef">
+      <SectionHeader class="px-6 text-center" dark
+        >제가 경험해본, 그리고 할 줄 아는 것들이에요. <br />
+        <p class="text-sm text-slate-400 font-semibold mt-2">
+          별 개수는 숙련도를 의미해요!
+        </p></SectionHeader
+      >
+    </div>
+
     <div class="skills__container">
       <div
         class="skill__item"
@@ -13,7 +16,7 @@
         :class="'skill__item--0' + (i + 1)"
         :ref="'skillRef0' + (i + 1)"
       >
-        <SkillsCard :stars="item.stars">
+        <SkillsCard :stars="Number(item.stars)">
           <template #icon>
             <img
               class="rounded-md"
@@ -35,7 +38,6 @@
 import { gsap } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
-import { ref, onMounted } from 'vue';
 import SectionHeader from '@/components/SectionHeader.vue';
 import SkillsCard from '@/components/SkillsCard.vue';
 import reactIcon from '@/assets/images/skills_react.png';
@@ -111,19 +113,186 @@ export default {
   methods: {
     scrollAnimation() {
       const skillSectionRef = this.$refs.skillSectionRef;
+      const headerRef = this.$refs.headerRef;
       const skillRef01 = this.$refs.skillRef01;
+      const skillRef02 = this.$refs.skillRef02;
+      const skillRef03 = this.$refs.skillRef03;
+      const skillRef04 = this.$refs.skillRef04;
+      const skillRef05 = this.$refs.skillRef05;
+      const skillRef06 = this.$refs.skillRef06;
+      const skillRef07 = this.$refs.skillRef07;
+      const skillRef08 = this.$refs.skillRef08;
 
-      gsap.to(skillRef01, {
-        scrollTrigger: {
-          trigger: skillSectionRef,
-          start: 'top 50%',
-          end: 'bottom 50%',
-          scrub: 1,
+      gsap.fromTo(
+        headerRef,
+        {
+          opacity: 0,
+          scale: 0,
         },
-        x: 80,
-        y: 80,
-        duration: 1,
-      });
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 80%',
+            end: 'bottom 80%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef01,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: 120,
+          y: 80,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef02,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: 160,
+          y: 24,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef03,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: 136,
+          y: -12,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef04,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: 82,
+          y: -50,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef05,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: -78,
+          y: -68,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef06,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: -102,
+          y: -24,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef07,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: -116,
+          y: 12,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        skillRef08,
+        {
+          opacity: 0.2,
+        },
+        {
+          x: -72,
+          y: 62,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: skillSectionRef,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            scrub: 1,
+          },
+        },
+      );
     },
   },
   mounted() {
@@ -136,6 +305,10 @@ export default {
 .skills {
   padding-top: 12vw;
   padding-bottom: 12vw;
+
+  // h2 {
+  //   font-size: 1.875vw;
+  // }
 
   &__container {
     .skill__item {
@@ -181,6 +354,14 @@ export default {
         top: 18.2vh;
         right: 15.8vw;
       }
+    }
+  }
+}
+
+@media (max-width: 1919px) {
+  .skills {
+    h2 {
+      font-size: 40px;
     }
   }
 }
