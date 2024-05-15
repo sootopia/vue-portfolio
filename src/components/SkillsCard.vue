@@ -20,7 +20,7 @@
 <script>
 export default {
   props: {
-    stars: String,
+    stars: Number,
   },
   computed: {
     starSymbol() {
