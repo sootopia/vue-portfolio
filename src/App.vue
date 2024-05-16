@@ -4,18 +4,18 @@
     @scrollTo="scrollToSection"
   />
   <main>
-    <div ref="heroSectionRef">
+    <section ref="heroSectionRef">
       <HeroSection @scrollToAbout="scrollToSection(aboutSectionRef)" />
-    </div>
-    <div ref="aboutSectionRef">
+    </section>
+    <section ref="aboutSectionRef">
       <AboutSection />
-    </div>
-    <div ref="skillSectionRef">
+    </section>
+    <section ref="skillSectionRef">
       <SkillSection />
-    </div>
-    <div ref="worksSectionRef">
+    </section>
+    <section ref="worksSectionRef">
       <WorksSection />
-    </div>
+    </section>
   </main>
 </template>
 

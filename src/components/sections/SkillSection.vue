@@ -1,5 +1,5 @@
 <template>
-  <section ref="skillSectionRef" class="skills relative flex justify-center items-center h-dvh">
+  <div ref="skillSectionRef" class="skills relative flex justify-center items-center h-dvh">
     <div ref="headerRef">
       <SectionHeader class="px-6 text-center" dark
         >제가 경험해본, 그리고 할 줄 아는 것들이에요. <br />
@@ -31,7 +31,7 @@
         </SkillsCard>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="works py-52 bg-slate-50">
+  <div class="works py-52 bg-slate-50">
     <div class="container mx-auto">
       <SectionHeader dark class="mb-16">그동안 작업한 프로젝트입니다.</SectionHeader>
 
@@ -23,7 +23,7 @@
 
       <div ref="worksBottomRef"></div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

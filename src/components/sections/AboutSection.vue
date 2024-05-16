@@ -1,5 +1,5 @@
 <template>
-  <section class="about flex justify-center items-center">
+  <div class="about flex justify-center items-center">
     <div class="container mx-auto">
       <div class="flex gap-48">
         <div class="flex-none">
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero h-dvh flex justify-items-center items-center px-6">
+  <div class="hero h-dvh flex justify-items-center items-center px-6">
     <div class="container mx-auto">
       <h1 class="text-center hero__heading" v-html="typingText"></h1>
 
@@ -9,7 +9,7 @@
 
       <img class="hero__img" :src="heroMimoticon" alt="" />
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
