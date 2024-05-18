@@ -40,14 +40,6 @@ import { CSSPlugin } from 'gsap/CSSPlugin';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import SectionHeader from '@/components/SectionHeader.vue';
 import SkillsCard from '@/components/SkillsCard.vue';
-import reactIcon from '@/assets/images/skills_react.png';
-import vueIcon from '@/assets/images/skills_vue.png';
-import jsIcon from '@/assets/images/skills_js.png';
-import cssIcon from '@/assets/images/skills_css.png';
-import cssFrameworksIcon from '@/assets/images/skills_tailwind.png';
-import htmlIcon from '@/assets/images/skills_html.png';
-import uiuxIcon from '@/assets/images/skills_figma.png';
-import coopIcon from '@/assets/images/skills_git.png';
 
 gsap.registerPlugin(CSSPlugin, ScrollTrigger);
 
@@ -63,49 +55,49 @@ export default {
           title: 'React',
           stars: 3,
           content: 'Redux, Recoil, Zustand, <br>Styled Components',
-          thumbnail: reactIcon,
+          thumbnail: '/static/images/skills_react.png',
         },
         {
           title: 'Vue.js',
           stars: 5,
           content: 'Composition API, Vuex, Pinia',
-          thumbnail: vueIcon,
+          thumbnail: '/static/images/skills_vue.png',
         },
         {
           title: 'Javascript',
           stars: 5,
           content: 'ES6, Vanilla JS, jQuery, Typescript',
-          thumbnail: jsIcon,
+          thumbnail: '/static/images/skills_js.png',
         },
         {
           title: 'CSS',
           stars: 5,
           content: 'LESS, SASS(SCSS), PostCSS, BEM',
-          thumbnail: cssIcon,
+          thumbnail: '/static/images/skills_css.png',
         },
         {
           title: 'CSS 프레임워크',
           stars: 5,
           content: 'Bootstrap(v3. ~ 최신), Tailwind CSS',
-          thumbnail: cssFrameworksIcon,
+          thumbnail: '/static/images/skills_tailwind.png',
         },
         {
           title: 'HTML',
           stars: 5,
           content: '웹 표준, 웹 접근성, 시맨틱 태그',
-          thumbnail: htmlIcon,
+          thumbnail: '/static/images/skills_html.png',
         },
         {
           title: 'UI/UX 도구',
           stars: 4,
           content: 'Photoshop, XD, Illustrator, Figma',
-          thumbnail: uiuxIcon,
+          thumbnail: '/static/images/skills_figma.png',
         },
         {
           title: '협업 도구',
           stars: 4,
           content: 'Git, Confluence, Notion',
-          thumbnail: coopIcon,
+          thumbnail: '/static/images/skills_git.png',
         },
       ],
     };
