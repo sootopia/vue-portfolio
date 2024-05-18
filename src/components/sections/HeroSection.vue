@@ -7,15 +7,13 @@
         <div class="mouse__wheel"></div>
       </span>
 
-      <img class="hero__img" :src="heroMimoticon" alt="" />
+      <img class="hero__img" src="/static/images/hero_mimoticon.png" alt="" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import heroMimoticon from '@/assets/images/hero_mimoticon.png';
-// const greeting = `Hello. I'm Soohyun Park. \nI'm a 9 year front-end developer.`;
 const greeting = `안녕하세요. \n9년차 프론트엔드 개발자 박수현입니다 😎`;
 const typingText = ref('');
 const emit = defineEmits(['scrollToAbout']);
