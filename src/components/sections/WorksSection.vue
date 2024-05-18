@@ -10,7 +10,7 @@
       <div class="text-center mt-24">
         <button
           type="button"
-          class="text-white font-bold h-14 px-12 rounded-xl bg-blue-500 hover:bg-blue-600 active:bg-blue-700 active:shadow-[0px_0px_0px_3px_rgba(59,130,246,0.24)] outline-none transition-all"
+          class="text-white font-bold h-14 px-12 rounded-xl bg-slate-500 hover:bg-slate-600 active:bg-slate-700 active:shadow-[0px_0px_0px_3px_rgba(51,65,85,0.24)] outline-none transition-all"
           v-if="currentPage < totalPages"
           @click="
             currentPage++;
@@ -54,11 +54,11 @@ export default {
 
         totalPages.value = response.data.totalPages;
 
-        if (currentPage.value > 1) {
-          nextTick(() => {
-            worksBottomRef.value.scrollIntoView();
-          });
-        }
+        // if (currentPage.value > 1) {
+        //   nextTick(() => {
+        //     worksBottomRef.value.scrollIntoView();
+        //   });
+        // }
       } catch (error) {
         alert('오류가 발생했어요.');
         console.log(error);
