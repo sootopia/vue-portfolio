@@ -16,7 +16,11 @@
     <section ref="worksSectionRef">
       <WorksSection />
     </section>
+    <section ref="contactSectionRef">
+      <ContactSection />
+    </section>
   </main>
+  <Footer />
 </template>
 
 <script>
@@ -25,6 +29,8 @@ import HeroSection from '@/components/sections/HeroSection.vue';
 import AboutSection from '@/components/sections/AboutSection.vue';
 import SkillSection from '@/components/sections/SkillSection.vue';
 import WorksSection from '@/components/sections/WorksSection.vue';
+import ContactSection from '@/components/sections/ContactSection.vue';
+import Footer from '@/components/layouts/FooterLayout.vue';
 
 export default {
   components: {
@@ -33,6 +39,8 @@ export default {
     AboutSection,
     SkillSection,
     WorksSection,
+    ContactSection,
+    Footer,
   },
   data() {
     return {
@@ -50,7 +58,6 @@ export default {
       const lightHeaderPoint = stickyPoint + this.$refs.aboutSectionRef.offsetHeight;
       const scrollTop = window.scrollY;
 
-      console.log(lightHeaderPoint);
       this.isSticky = scrollTop >= stickyPoint;
       this.isLightHeader = scrollTop >= lightHeaderPoint;
     },
