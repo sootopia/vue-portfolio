@@ -4,7 +4,7 @@
       <div class="flex gap-48">
         <div class="flex-none">
           <figure class="mimoticon-wrapper">
-            <img :src="aboutMimoticon" alt="" />
+            <img src="/static/images/about_mimoticon.png" alt="" />
           </figure>
         </div>
         <div class="flex-auto">
@@ -15,23 +15,6 @@
               <template #content>{{ item.content }}</template>
             </AboutCard>
           </div>
-
-          <p class="about__grid--desc mt-2 text-sm text-gray-500 font-semibold">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-question-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
-              />
-            </svg>
-            각 카드를 클릭하시면 상세 내용을 보실 수 있어요.
-          </p>
         </div>
       </div>
     </div>
@@ -40,7 +23,6 @@
 
 <script>
 import SectionHeader from '@/components/SectionHeader.vue';
-import aboutMimoticon from '@/assets/images/about_mimoticon.png';
 import AboutCard from '@/components/AboutCard.vue';
 
 export default {
@@ -50,7 +32,6 @@ export default {
   },
   data() {
     return {
-      aboutMimoticon: aboutMimoticon,
       cardItems: [
         {
           title: '경력',
