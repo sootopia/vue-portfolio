@@ -8,10 +8,10 @@
     @click="handleCloseAlert"
   >
     <div
-      class="flex flex-col max-w-[300px] h-full mx-6 sm:mx-auto py-8 justify-center items-center"
+      class="alert__dialog--wrapper flex flex-col max-w-[300px] h-full mx-6 sm:mx-auto py-8 justify-center items-center"
     >
       <div
-        class="relative flex flex-col w-full p-6 rounded-3xl bg-white overflow-hidden shadow-[0px_8px_32px_8px_rgba(33,33,33,0.08)]"
+        class="alert__dialog relative flex flex-col w-full p-6 rounded-3xl bg-white overflow-hidden shadow-[0px_8px_32px_8px_rgba(33,33,33,0.08)]"
         @click.stop
       >
         <h1 class="text-xl font-bold">{{ title }}</h1>
@@ -33,7 +33,7 @@
 <script>
 import { ref } from 'vue';
 export default {
-  name: 'ErrorAlert',
+  name: 'CustomAlert',
   setup() {
     const isVisibleAlert = ref(false);
     const title = ref('');
@@ -59,3 +59,25 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.alert__dialog {
+  &--wrapper {
+    perspective: 100px;
+  }
+
+  animation: fade-up 0.45s forwards;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotateX(0deg);
+  }
+}
+</style>

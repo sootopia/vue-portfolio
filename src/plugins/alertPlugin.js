@@ -1,10 +1,10 @@
 import { createApp, h } from 'vue';
-import ErrorAlert from '@/components/ErrorAlert.vue';
+import CustomAlert from '@/components/CustomAlert.vue';
 
 export default {
   install(app) {
     // 얼럿 인스턴스 생성
-    const alertInstance = createApp(ErrorAlert).mount(document.createElement('div'));
+    const alertInstance = createApp(CustomAlert).mount(document.createElement('div'));
 
     // body에 얼럿 인스턴스 삽입
     document.body.appendChild(alertInstance.$el);
