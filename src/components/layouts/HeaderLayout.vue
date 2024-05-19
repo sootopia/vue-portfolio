@@ -8,7 +8,7 @@
           <li><a href="#none" @click.prevent="emitScrollTo('aboutSectionRef')">About</a></li>
           <li><a href="#none" @click.prevent="emitScrollTo('skillSectionRef')">Skills</a></li>
           <li><a href="#none" @click.prevent="emitScrollTo('worksSectionRef')">Projects</a></li>
-          <li><a href="#none" @click.prevent="emitScrollTo('')">Contact</a></li>
+          <li><a href="#none" @click.prevent="emitScrollTo('contactSectionRef')">Contact</a></li>
         </ul>
       </nav>
     </div>
