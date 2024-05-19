@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import '@/assets/css/index.css';
+import alertPlugin from './plugins/alertPlugin';
 
-createApp(App).mount('#app');
+const app = createApp(App);
+app.use(alertPlugin).mount('#app');
