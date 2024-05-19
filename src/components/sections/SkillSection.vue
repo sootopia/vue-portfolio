@@ -66,7 +66,7 @@ export default {
         {
           title: 'Javascript',
           stars: 5,
-          content: 'ES6, Vanilla JS, jQuery, Typescript',
+          content: 'ECMAScript 6, jQuery, Typescript',
           thumbnail: '/static/images/skills_js.png',
         },
         {
