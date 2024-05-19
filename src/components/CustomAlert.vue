@@ -8,14 +8,15 @@
     @click="handleCloseAlert"
   >
     <div
-      class="alert__dialog--wrapper flex flex-col max-w-[300px] h-full mx-6 sm:mx-auto py-8 justify-center items-center"
+      class="alert__dialog--wrapper flex flex-col h-full mx-6 max-[639px]:max-w-[90%] sm:mx-auto py-8 justify-center items-center"
+      :style="customWidthStyle"
     >
       <div
         class="alert__dialog relative flex flex-col w-full p-6 rounded-3xl bg-white overflow-hidden shadow-[0px_8px_32px_8px_rgba(33,33,33,0.08)]"
         @click.stop
       >
         <h1 class="text-xl font-bold">{{ title }}</h1>
-        <p v-if="message" class="font-semibold text-slate-600 mt-4">{{ message }}</p>
+        <p v-if="message" class="font-semibold text-slate-600 mt-4" v-html="message"></p>
         <div class="text-right mt-8">
           <button
             type="button"
@@ -38,11 +39,15 @@ export default {
     const isVisibleAlert = ref(false);
     const title = ref('');
     const message = ref('');
+    const width = ref(0);
+    const customWidthStyle = ref('max-width: 300px');
 
-    const handleOpenAlert = (alertTitle, alertMessage) => {
+    const handleOpenAlert = (alertTitle, alertMessage, alertWidth) => {
       title.value = alertTitle;
       message.value = alertMessage;
       isVisibleAlert.value = true;
+
+      if (alertWidth) customWidthStyle.value = `max-width: ${alertWidth}px`;
     };
 
     const handleCloseAlert = () => {
@@ -55,6 +60,8 @@ export default {
       message,
       handleOpenAlert,
       handleCloseAlert,
+      width,
+      customWidthStyle,
     };
   },
 };
