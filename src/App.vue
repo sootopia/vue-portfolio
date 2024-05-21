@@ -5,7 +5,7 @@
   />
   <main>
     <section ref="heroSectionRef">
-      <HeroSection @scrollToAbout="scrollToSection(aboutSectionRef)" />
+      <HeroSection @handleMoveScroll="scrollToSection('aboutSectionRef')" />
     </section>
     <section ref="aboutSectionRef">
       <AboutSection />
