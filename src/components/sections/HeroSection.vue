@@ -12,32 +12,40 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-const greeting = `안녕하세요. \n9년차 프론트엔드 개발자 박수현입니다 😎`;
-const typingText = ref('');
-const emit = defineEmits(['scrollToAbout']);
-let index = 0;
-
-const typeText = () => {
-  if (index < greeting.length) {
-    typingText.value += greeting.charAt(index) === '\n' ? '<br />' : greeting.charAt(index);
-    index++;
-    setTimeout(typeText, 100);
-  } else {
-    setTimeout(() => {
-      typingText.value = '';
-      index = 0;
-      typeText();
-    }, 2000);
-  }
+<script>
+export default {
+  data() {
+    return {
+      greeting: `안녕하세요. \n9년차 프론트엔드 개발자 박수현입니다 :)`,
+      typingText: '',
+      typingIndex: 0,
+    };
+  },
+  methods: {
+    typeText() {
+      if (this.typingIndex < this.greeting.length) {
+        this.typingText +=
+          this.greeting.charAt(this.typingIndex) === '\n'
+            ? '<br />'
+            : this.greeting.charAt(this.typingIndex);
+        this.typingIndex++;
+        setTimeout(this.typeText, 100);
+      } else {
+        setTimeout(() => {
+          this.typingText = '';
+          this.typingIndex = 0;
+          this.typeText();
+        }, 2000);
+      }
+    },
+    handleMoveScroll() {
+      this.$emit('handleMoveScroll');
+    },
+  },
+  mounted() {
+    this.typeText();
+  },
 };
-
-const handleMoveScroll = () => {
-  emit('scrollToAbout');
-};
-
-typeText();
 </script>
 
 <style lang="scss" scoped>
