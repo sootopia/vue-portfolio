@@ -64,13 +64,36 @@ const cardTransform = computed(() => {
     background-image: linear-gradient(135deg, #007991 0%, #78ffd6 100%);
   }
 
-  &:nth-child(n + 4):not(:nth-child(n + 7)) {
-    margin-left: 64px;
-    margin-right: -64px;
-  }
-
   &:hover {
     background-color: tint($black, 18%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__grid--card {
+    &:nth-child(n + 4):not(:nth-child(n + 7)) {
+      margin-left: 64px;
+      margin-right: -64px;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .about__grid--card {
+    &:nth-child(n + 4):not(:nth-child(n + 7)) {
+      margin-left: 36px;
+      margin-right: -36px;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .about__grid--card {
+    --about-grid-padding: 20px;
+
+    strong {
+      font-size: 20px;
+    }
   }
 }
 </style>

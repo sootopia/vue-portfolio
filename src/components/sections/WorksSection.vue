@@ -60,7 +60,7 @@ export default {
         //   });
         // }
       } catch (error) {
-        alert('오류가 발생했어요.');
+        // alert('오류가 발생했어요.');
         console.log(error);
       }
     };

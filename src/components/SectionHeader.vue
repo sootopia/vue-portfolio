@@ -68,4 +68,22 @@ h2 {
     color: #101010;
   }
 }
+
+@media (max-width: 1279px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 28px;
+  }
+}
 </style>
