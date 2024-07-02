@@ -13,37 +13,46 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
+
 export default {
-  data() {
-    return {
-      greeting: `안녕하세요. \n9년차 프론트엔드 개발자 박수현입니다 :)`,
-      typingText: '',
-      typingIndex: 0,
-    };
-  },
-  methods: {
-    typeText() {
-      if (this.typingIndex < this.greeting.length) {
-        this.typingText +=
-          this.greeting.charAt(this.typingIndex) === '\n'
+  setup() {
+    const greeting = `안녕하세요. \n프론트엔드 개발자 박수현입니다 :)`;
+    const typingText = ref('');
+    const typingIndex = ref(0);
+
+    /**
+     * 자동 타이핑 처리
+     */
+    const typeText = () => {
+      if (typingIndex.value < greeting.length) {
+        typingText.value +=
+          greeting.charAt(typingIndex.value) === '\n'
             ? '<br />'
-            : this.greeting.charAt(this.typingIndex);
-        this.typingIndex++;
-        setTimeout(this.typeText, 100);
+            : greeting.charAt(typingIndex.value);
+        typingIndex.value++;
+        setTimeout(typeText, 100);
       } else {
         setTimeout(() => {
-          this.typingText = '';
-          this.typingIndex = 0;
-          this.typeText();
+          typingText.value = '';
+          typingIndex.value = 0;
+          typeText();
         }, 2000);
       }
-    },
-    handleMoveScroll() {
+    };
+
+    /**
+     * 스크롤 처리
+     */
+    const handleMoveScroll = () => {
       this.$emit('handleMoveScroll');
-    },
-  },
-  mounted() {
-    this.typeText();
+    };
+
+    onMounted(() => {
+      typeText();
+    });
+
+    return { greeting, typingText, typingIndex, typeText, handleMoveScroll };
   },
 };
 </script>
@@ -150,6 +159,43 @@ export default {
 
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1279px) {
+  .hero {
+    h1 {
+      font-size: 48px;
+    }
+
+    &__img {
+      max-height: 30vh;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    h1 {
+      font-size: 40px;
+      word-break: keep-all;
+    }
+
+    &__img {
+      max-height: 24vh;
+    }
+
+    .mouse {
+      bottom: 24dvh;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+    h1 {
+      font-size: 36px;
+    }
   }
 }
 </style>
